@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Budget Tracker</h1>
+            <p>Keep track of your spending</p>
+        </header>
+
+        <div class="budget-summary">
+            <div class="summary-card">
+                <h2>Total Spent</h2>
+                <p class="total-amount" id="totalAmount">$0.00</p>
+            </div>
+            <div class="summary-card">
+                <h2>This Month</h2>
+                <p class="month-amount" id="monthAmount">$0.00</p>
+            </div>
+        </div>
+
+        <div class="add-expense-section">
+            <h2>Add New Expense</h2>
+            <form id="expenseForm">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="e.g., Groceries" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Amount ($)</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select...</option>
+                            <option value="food">🍔 Food</option>
+                            <option value="entertainment">🎬 Entertainment</option>
+                            <option value="bills">📄 Bills</option>
+                            <option value="shopping">🛍️ Shopping</option>
+                            <option value="transport">🚗 Transport</option>
+                            <option value="health">❤️ Health</option>
+                            <option value="other">📦 Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-add">Add Expense</button>
+            </form>
+        </div>
+
+        <div class="expenses-section">
+            <div class="expenses-header">
+                <h2>Recent Expenses</h2>
+                <button id="clearAll" class="btn-clear">Clear All</button>
+            </div>
+            <div id="expensesList" class="expenses-list">
+                <p class="no-expenses">No expenses yet. Add one above!</p>
+            </div>
+        </div>
+
+        <div class="category-breakdown">
+            <h2>Spending by Category</h2>
+            <div id="categoryStats" class="category-stats">
+                <!-- Category breakdown will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
